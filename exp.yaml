@@ -1,0 +1,13 @@
+ignore_label: &ignore_label 3 # 按照category_map计算masked的index
+num_classes: &num_classes 3 # masked是ignore_label无需计数
+label_map: &label_map
+  - bg
+  - bianxing
+  - yashang
+  # - masked 是ignore_label, 无需写入
+
+category_map: &category_map
+  - [bg]
+  - [bianxing]
+  - [yashang]
+  - [masked]  # json-label, 需要写入masked_label转成mask_img.
