@@ -11,3 +11,10 @@ category_map: &category_map
   - [bianxing]
   - [yashang]
   - [masked]  # json-label, 需要写入masked_label转成mask_img.
+
+# 使用ignore需要注意的坑:  RandomRotation and RandomScale
+  - type: RandomRotation # or RandomScale
+        prob: 0.5
+        hook_cfg:
+          ignore_label: *ignore_label  # 补充这个hook_cfg.
+        angle: *rotate_angle
